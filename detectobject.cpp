@@ -1,7 +1,7 @@
 // define pin
 const int trigPin = 9;
 const int echoPin = 10;
-const int ledPin = 13;
+const int vaultPin = 5;
 
 
 // define variable
@@ -9,10 +9,11 @@ long duration;
 int distance;
 int OnDistance;
 
+// Define input and output
 void setup(){
   pinMode(trigPin, OUTPUT);
   pinMode(echoPin, INPUT);
-  pinMode(ledPin, OUTPUT);
+  pinMode(vaultPin, OUTPUT);
   Serial.begin(9600);
 }
 
@@ -21,7 +22,7 @@ void loop() {
   digitalWrite(trigPin, LOW);
   delayMicroseconds(2);
   
-  // Sets the trigPin on HIGH state for 10 micro seconds
+  // Sets the trigPin on HIGH state for 10 micro seconds, this will create pulse
   digitalWrite(trigPin, HIGH);
   delayMicroseconds(10);
   digitalWrite(trigPin, LOW);
@@ -33,32 +34,32 @@ void loop() {
   distance= duration*0.034/2;
   
 OnDistance = distance;
-  if (OnDistance <= 7){
+  
+  // check if cup in a suitable distance to fill
+  if (OnDistance <= 10){
       delay(2000);
-      digitalWrite(ledPin, HIGH);
+      digitalWrite(vaultPin, HIGH);
       Serial.println("ON");
       Serial.println("filling the cup");
       delay(5000);
       
       // while loop to check if the cup has been removed or not
-        while(OnDistance <= 7){
-            digitalWrite(ledPin, LOW);
+        while(OnDistance <= 10){
+            digitalWrite(vaultPin, LOW);
             Serial.println("Please remove the cup");
-             // Clears the trigPin
+          
+            // Clears the trigPin
             digitalWrite(trigPin, LOW);
             delayMicroseconds(2);
-            duration = pulseIn(echoPin, HIGH);
-                
-            // Sets the trigPin on HIGH state for 10 micro seconds
+
+            // Sets the trigPin on HIGH state for 10 micro seconds, this will create pulse
             digitalWrite(trigPin, HIGH);
             delayMicroseconds(10);
             digitalWrite(trigPin, LOW);
-            distance= duration*0.034/2;
-            OnDistance = distance;
         }
     }    
     else{
-      digitalWrite(ledPin, LOW);
+      digitalWrite(vaultPin, LOW);
       Serial.println("OFF");
     }
   
