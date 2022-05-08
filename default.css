@@ -1,0 +1,47 @@
+
+.main_container {
+  max-width: 1000px;
+  overflow: auto;
+  padding: auto;
+  margin: auto;
+}
+
+.navigation_bar {
+  font-size: 1.2rem;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+}
+
+.navigation_bar .main_container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+ 
+}
+
+.team{
+	font-size: 3rem;
+}
+
+.pages{
+	list-style: none;
+	justify-self: end;
+	display: flex;
+	justify-content: center;
+	padding: 1rem;
+}
+
+li{
+	margin: 2rem ;
+}
+
+
+.product_section{
+  font-size: 1.2rem;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+}
+
+.product_section .main_container{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
