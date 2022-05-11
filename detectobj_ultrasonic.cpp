@@ -1,4 +1,4 @@
-// define pin
+// define pin ( using const to make sure the value will not chance during the process)
 const int trigPin = 9;
 const int echoPin = 10;
 const int vaultPin = 5;
@@ -42,7 +42,7 @@ void loop() {
 OnDistance = distance;
   
   // check if cup in a suitable distance to fill
-  if (OnDistance <= 40){
+  if (OnDistance <= 5){
       delay(2000);
       digitalWrite(vaultPin, HIGH);
       digitalWrite(pumpPin, HIGH);
@@ -53,7 +53,7 @@ OnDistance = distance;
       digitalWrite(fill_ledPin, LOW);	
       
       // while loop to check if the cup has been removed or not
-        while(OnDistance <= 40){
+        while(OnDistance <= 5){
             digitalWrite(vaultPin, LOW);
             digitalWrite(pumpPin, LOW);
             digitalWrite(remove_ledPin, HIGH);
