@@ -65,7 +65,7 @@ void loop() {
   // check for new data/start next conversion:
   if (LoadCell.update()) newDataReady = true;
 
-  // get smoothed value from the dataset:
+  // get smoothed value from the dataset: // output to use for detection
   if (newDataReady) {
     if (millis() > t + serialPrintInterval) {
       float i = LoadCell.getData();
