@@ -1,0 +1,106 @@
+*{
+  box-sizing:border-box;
+  scroll-behavior:smooth;
+}
+
+nav {
+  background-color:white;
+  background: url(images/water_waver.jpg);
+  background-repeat:no-repeat;
+  background-size:100% 70%;
+
+  position:fixed;
+  left:0;
+  top:0;
+  height:5rem;
+  width:100%}
+
+.navbar {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  height:90%;
+  width:90%;
+  margin:auto;}
+
+.navbar_title {
+  color:rgb(44, 48, 51);
+  font-size: 1.8rem;
+  font-weight:550;}
+
+.navbar_nav {
+  display:flex;}
+
+.navbar_link {
+  list-style:none;
+  margin:0 10px;}
+
+.navbar_link a {
+  color:rgb(44, 48, 51);
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-decoration:none;}
+
+  /* Links on mouse-over */
+.navbar_link a:hover {
+    background-color: rgb(127, 173, 210);
+    color: rgb(255, 255, 255);}
+
+section{
+  height: 100%;
+  width: 100%;
+  padding-right: 12%;
+  padding-left: 12%;
+  padding-top: 5%;
+  padding-bottom:5%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:rgb(44, 48, 51);
+  background-color:rgb(255, 255, 255);
+}
+
+section:nth-of-type(2n) {
+  background-color: rgb(250, 250, 250);
+  }
+
+h1{
+  font-size:1.8rem;
+}
+h2{
+  font-size:1.7rem;
+}
+p{
+  font-size:1.4rem;
+}
+li{
+  list-style:disc;
+}
+  
+#home{
+  padding-top:140px;}
+
+.main_container {
+  max-width: 1000%;
+  overflow: auto;
+  padding: auto;
+  margin: auto;}
+
+.product_sec .main_container{
+  display: grid;
+  grid-template-columns: 1fr 1fr;}
+
+.steps_container {
+  display: grid;
+  grid-template-columns:1fr 1fr;}
+
+.member_cont{
+    display: grid;
+    grid-template-columns:repeat(5, 1fr);}
+
+footer{
+  height:40px;
+  background-image:linear-gradient(to bottom right, rgb(255, 255, 255), rgb(218, 224, 226));
+  background-size:auto;
+  color:rgb(44, 48, 51);
+  text-align: center;}
