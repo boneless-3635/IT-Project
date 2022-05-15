@@ -77,11 +77,11 @@ section{
 h1 {
   font-size: calc(1.1rem + 0.9vw);
 }
-.product-sec {
+.product_sec {
   padding-top: 10rem;
-  background: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0.9) 75%, rgba(0, 0, 0, 0.8) 100%);
-}
-.product-sec p {
+  background: white;}
+  
+.produc_sec p {
   margin-bottom: 5rem;
 }
 
