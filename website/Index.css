@@ -1,11 +1,11 @@
 *{
   box-sizing:border-box;
+  font-family: 'Spectral', serif;
   scroll-behavior:smooth;
 }
 
 nav {
   background-color:white;
-  background: url(images/water_waver.jpg);
   background-repeat:no-repeat;
   background-size:100% 70%;
 
@@ -26,7 +26,7 @@ nav {
 .navbar_title {
   color:rgb(44, 48, 51);
   font-size: 1.8rem;
-  font-weight:550;}
+  font-weight:555;}
 
 .navbar_nav {
   display:flex;}
@@ -47,8 +47,7 @@ nav {
     color: rgb(255, 255, 255);}
 
 section{
-  height: 100%;
-  width: 100%;
+
   padding-right: 12%;
   padding-left: 12%;
   padding-top: 5%;
@@ -57,16 +56,35 @@ section{
   align-items:center;
   justify-content:center;
   color:rgb(44, 48, 51);
-  background-color:rgb(255, 255, 255);
 }
 
-section:nth-of-type(2n) {
-  background-color: rgb(250, 250, 250);
-  }
 
-h1{
-  font-size:1.8rem;
+.home_sec {
+  width: 100%;
+  height: auto;
+  min-height: 35rem;
+  padding: 15rem 0;
+  background: url("images/background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
+
+.home_sec h1 {
+  font-size: calc(1.5rem + 2vw);
+}
+
+h1 {
+  font-size: calc(1.1rem + 0.9vw);
+}
+.product-sec {
+  padding-top: 10rem;
+  background: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0.9) 75%, rgba(0, 0, 0, 0.8) 100%);
+}
+.product-sec p {
+  margin-bottom: 5rem;
+}
+
 h2{
   font-size:1.7rem;
 }
