@@ -9,18 +9,21 @@
 
 <body id="top">
 	<!--Naviagation bar-->
-	<nav>
-		<div class="navbar">
-			<div class="navbar_title" href="#top">Auto Water</div>
-			<ul class="navbar_nav">
-				<li class="navbar_link"><a href="#top">Home</a></li>
-				<li class="navbar_link"><a href="#product">Product</a></li>
-				<li class="navbar_link"><a href="#progress">Progress</a></li>
-				<li class="navbar_link"><a href="#about">About</a></li>
-			</ul>
-		</div>
-	</nav>
-
+	<header>
+		<div class="navbar_title" href="#top">Auto Water</div>
+		<ul class="navbar_nav">
+			<li class="navbar_link"><a href="#top">Home</a></li>
+			<li class="navbar_link"><a href="#product">Product</a></li>
+			<li class="navbar_link"><a href="#progress">Progress</a></li>
+			<li class="navbar_link"><a href="#about">About</a></li>
+		</ul>
+	</header>
+	<script type="text/javascript">
+		window.addEventListener("scroll", function(){
+			var header = document.querySelector("header");
+			header.classList.toggle("sticky", window.scrollY > 0);
+		})
+	</script>
 <!--Home section-->
 <section class="home_sec">
 	<div class="main_container">
@@ -81,7 +84,7 @@
 	<div class="main_container">
 		<div>
 			<h1 align="center">About Us</h1>
-            <h2 align="center"><img src="images/Logo_hori.png" width="400"></h2>
+            <h2 align="center"><img src="images/AutoWater_hori.png" width="500"></h2>
 			    <p>
                     We are IT project group 3. We are IT project group 3. We are IT project group 3. We are IT project group 3. We are IT project group 3.
                     We are IT project group 3. We are IT project group 3. We are IT project group 3. We are IT project group 3. We are IT project group 3. 
@@ -146,7 +149,7 @@
 
 <footer>
 	<div class="bottom">
-		<img class="footer_img" src="images/Logo_hori.png" width="200" align="left">
+		<img class="footer_img" src="images/AutoWater_hori.png" width="200" align="left">
 		<h4 align="center">&copy; Copyright 2022, AutoWaterCorp. All rights reserved</h4>
 		<img class="footer_img" src="images/RMIT_logo.png" width="200" align="right">
 	</div>
