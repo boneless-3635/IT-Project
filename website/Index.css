@@ -1,13 +1,12 @@
 *{
   box-sizing:border-box;
   font-family: 'Spectral', serif;
+  color:rgb(35, 48, 65);
   scroll-behavior:smooth;
 }
 
 nav {
-  background-color:white;
-  background-repeat:no-repeat;
-  background-size:100% 70%;
+  background-image:linear-gradient(rgb(255, 255, 255),rgb(240, 245, 248));
 
   position:fixed;
   left:0;
@@ -19,14 +18,15 @@ nav {
   display:flex;
   align-items:center;
   justify-content:space-between;
+
   height:90%;
   width:90%;
   margin:auto;}
 
 .navbar_title {
-  color:rgb(44, 48, 51);
+  color:rgb(63, 70, 75);
   font-size: 1.8rem;
-  font-weight:555;}
+  font-weight:585;}
 
 .navbar_nav {
   display:flex;}
@@ -36,14 +36,14 @@ nav {
   margin:0 10px;}
 
 .navbar_link a {
-  color:rgb(44, 48, 51);
+  color:rgb(63, 70, 75);
   font-size: 1.2rem;
   font-weight: 500;
   text-decoration:none;}
 
   /* Links on mouse-over */
 .navbar_link a:hover {
-    background-color: rgb(127, 173, 210);
+    background-color: rgb(142, 171, 196);
     color: rgb(255, 255, 255);}
 
 section{
@@ -61,17 +61,18 @@ section{
 
 .home_sec {
   width: 100%;
-  height: auto;
+  height: 100%;
   min-height: 35rem;
   padding: 15rem 0;
   background: url("images/background.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+
 }
 
 .home_sec h1 {
-  font-size: calc(1.5rem + 2vw);
+  font-size: calc(1.6rem + 2vw);
 }
 
 h1 {
@@ -104,10 +105,6 @@ li{
   padding: auto;
   margin: auto;}
 
-.product_sec .main_container{
-  display: grid;
-  grid-template-columns: 1fr 1fr;}
-
 .steps_container {
   display: grid;
   grid-template-columns:1fr 1fr;}
@@ -115,10 +112,24 @@ li{
 .member_cont{
     display: grid;
     grid-template-columns:repeat(5, 1fr);}
-
-footer{
+.member_cont h3 {
+  font-size:calc(1rem + 0.35vw);
+  }
+.member_cont li {
+  font-size:calc(1rem + 0.3vw);
+}
+.member_cont p {
+  font-size:calc(1rem + 0.3vw);
+}
+footer {
   height:40px;
-  background-image:linear-gradient(to bottom right, rgb(255, 255, 255), rgb(218, 224, 226));
-  background-size:auto;
-  color:rgb(44, 48, 51);
-  text-align: center;}
+  background-image:linear-gradient(rgb(240, 245, 248),rgb(255, 255, 255));
+  height:3rem;
+}
+.bottom {
+  display: flex;
+  justify-content: space-between;
+}
+.bottom h4 {
+  color:rgb(141, 147, 153);
+}
