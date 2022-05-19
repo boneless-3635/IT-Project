@@ -22,6 +22,8 @@ void setup(){
   pinMode(remove_ledPin, OUTPUT);
   Serial.begin(9600);
   delay(10);
+  
+  //Booting up the machine
   Serial.println();
   Serial.println("Starting...");
   LoadCell.begin();
@@ -59,6 +61,8 @@ void loop() {
       t = millis();
     }
   }
+  
+  
   // check if cup in a suitable weight to fill
   if ((cup_weight >= 4) && (cup_weight <=300 )){   //change the cup_weight on the right to increase the desired weight
       delay(3000);
@@ -66,7 +70,8 @@ void loop() {
       digitalWrite(fill_ledPin, HIGH);
       Serial.println("ON");
       Serial.println("filling the cup");
-      //
+    
+      // update the cup_weight constantly in order to stop at the exact weight
       while(cup_weight >= 4 && cup_weight <= 300){
           static boolean newDataReady = 0;
           const int serialPrintInterval = 0; //increase value to slow down serial print activity
@@ -85,16 +90,16 @@ void loop() {
       }
       digitalWrite(fill_ledPin, LOW);  
       
-      // while loop to check if the cup has been removed or not
-        while(cup_weight >= 10 && cup_weight <= 1000){
-          digitalWrite(vaultPin, LOW);
-              //weighting
-          static boolean newDataReady = 0;
-          const int serialPrintInterval = 0; //increase value to slow down serial print activity
+     // while loop to check if the cup has been removed or not
+       while(cup_weight >= 10 && cup_weight <= 1000){
+         digitalWrite(vaultPin, LOW);
+     //weighting
+         static boolean newDataReady = 0;
+         const int serialPrintInterval = 0; //increase value to slow down serial print activity
 
           //check for new data/start next conversion:
           if (LoadCell.update()) newDataReady = true;
-             //get smoothed value from the dataset:
+            //get smoothed value from the dataset:
             if (newDataReady) {
               if (millis() > t + serialPrintInterval) {
                 cup_weight = LoadCell.getData();
@@ -107,8 +112,7 @@ void loop() {
             digitalWrite(remove_ledPin, HIGH);
             Serial.println("Please remove the cup");
         }  
-    
-  }
+    }
       else{
       digitalWrite(remove_ledPin, LOW);
       digitalWrite(vaultPin, LOW);
